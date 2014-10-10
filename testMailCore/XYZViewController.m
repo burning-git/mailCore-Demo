@@ -67,7 +67,7 @@
     
     [smtpSession setPort:465];
     smtpSession.username = @"burning_git@163.com";
-    smtpSession.password = @"xxxxxxxxxx";//  需要 手动 输入密码
+    smtpSession.password = @"xxxxxxxx";//  需要 手动 输入密码
     smtpSession.authType = MCOAuthTypeSASLPlain;
     smtpSession.connectionType = MCOConnectionTypeTLS;
     

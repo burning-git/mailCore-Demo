@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		66591FAB19E813AC00044D29 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66591FA019E8139700044D29 /* libMailCore-ios.a */; };
 		66591FAD19E813B100044D29 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66591FAC19E813B100044D29 /* CFNetwork.framework */; };
+		666858DA19E81BEC008E49AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666858D919E81BEC008E49AA /* Security.framework */; };
 		66EE500819E7E4920052B998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EE500719E7E4920052B998 /* Foundation.framework */; };
 		66EE500A19E7E4920052B998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EE500919E7E4920052B998 /* CoreGraphics.framework */; };
 		66EE500C19E7E4920052B998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EE500B19E7E4920052B998 /* UIKit.framework */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		66591F9419E8139600044D29 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../mailcore2/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
 		66591FAC19E813B100044D29 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		666858D919E81BEC008E49AA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		66EE500419E7E4910052B998 /* testMailCore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testMailCore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66EE500719E7E4920052B998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66EE500919E7E4920052B998 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				666858DA19E81BEC008E49AA /* Security.framework in Frameworks */,
 				66591FAD19E813B100044D29 /* CFNetwork.framework in Frameworks */,
 				66591FAB19E813AC00044D29 /* libMailCore-ios.a in Frameworks */,
 				66EE500A19E7E4920052B998 /* CoreGraphics.framework in Frameworks */,
@@ -172,6 +175,7 @@
 		66EE500619E7E4920052B998 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				666858D919E81BEC008E49AA /* Security.framework */,
 				66591FAC19E813B100044D29 /* CFNetwork.framework */,
 				66EE500719E7E4920052B998 /* Foundation.framework */,
 				66EE500919E7E4920052B998 /* CoreGraphics.framework */,
@@ -512,9 +516,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "testMailCore/testMailCore-Prefix.pch";
 				INFOPLIST_FILE = "testMailCore/testMailCore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
 				OTHER_LDFLAGS = (
-					"-lctemplate",
-					"-letpan",
+					"-lctemplate-ios",
+					"-letpan-ios",
 					"-licudata",
 					"-licui18n",
 					"-licuuc",
@@ -527,8 +533,6 @@
 					"-lc++",
 					"-stdlib=libc++",
 					"-ObjC",
-					"-lcrypto",
-					"-lssl",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -544,9 +548,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "testMailCore/testMailCore-Prefix.pch";
 				INFOPLIST_FILE = "testMailCore/testMailCore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
 				OTHER_LDFLAGS = (
-					"-lctemplate",
-					"-letpan",
+					"-lctemplate-ios",
+					"-letpan-ios",
 					"-licudata",
 					"-licui18n",
 					"-licuuc",
@@ -559,8 +565,6 @@
 					"-lc++",
 					"-stdlib=libc++",
 					"-ObjC",
-					"-lcrypto",
-					"-lssl",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
